@@ -3,14 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-import time
-import csv
 
 class FindElements(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Edge()
-        self.build = "2"
+        self.build = "2"    #Atributo para cambiar facilmente entre builds de la calculadora
 
     def test_Add_integers(self):
         driver = self.driver
