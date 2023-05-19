@@ -10,6 +10,7 @@ class FindElements(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Edge()
+        self.build = "2"
 
     def test_Add_integers(self):
         driver = self.driver
@@ -23,7 +24,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("321")
         number2.send_keys("9")
         selectOperation.select_by_visible_text("Add")
@@ -48,7 +49,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("400.3")
         number2.send_keys("9.2")
         selectOperation.select_by_visible_text("Add")
@@ -59,7 +60,7 @@ class FindElements(unittest.TestCase):
 
         onlyIntegers.click()
         calculateBtn.click()
-        self.assertIn("400", answerField.get_attribute('value'))
+        self.assertIn("409", answerField.get_attribute('value'))
 
     def test_Add_symbols_number1(self):
         driver = self.driver
@@ -73,7 +74,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("@Q")
         number2.send_keys("9.2")
         selectOperation.select_by_visible_text("Add")
@@ -98,7 +99,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         selectOperation.select_by_visible_text("Add")
         number1.send_keys("3")
         number2.send_keys("$=")
@@ -123,7 +124,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("500")
         number2.send_keys("9")
         selectOperation.select_by_visible_text("Subtract")
@@ -149,7 +150,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("500.7")
         number2.send_keys("9.3")
         selectOperation.select_by_visible_text("Subtract")
@@ -175,7 +176,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("34+21")
         number2.send_keys("9.3")
         selectOperation.select_by_visible_text("Subtract")
@@ -200,7 +201,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("31")
         number2.send_keys("9.3.4")
         selectOperation.select_by_visible_text("Subtract")
@@ -225,7 +226,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("1024")
         number2.send_keys("2")
         selectOperation.select_by_visible_text("Multiply")
@@ -250,7 +251,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("124.6")
         number2.send_keys("7.1")
         selectOperation.select_by_visible_text("Multiply")
@@ -275,7 +276,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("(8)")
         number2.send_keys("9.2")
         selectOperation.select_by_visible_text("Multiply")
@@ -301,7 +302,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("6")
         number2.send_keys("98+2")
         selectOperation.select_by_visible_text("Multiply")
@@ -326,7 +327,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("321")
         number2.send_keys("9")
         selectOperation.select_by_visible_text("Concatenate")
@@ -346,13 +347,13 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
-        number1.send_keys("** Hola esto")
-        number2.send_keys("es un test **")
+        selectBuild.select_by_visible_text(self.build)
+        number1.send_keys("** Test d")
+        number2.send_keys("e Hola **")
         selectOperation.select_by_visible_text("Concatenate")
         calculateBtn.click()
         
-        self.assertIn("** Hola esto es un test **", answerField.get_attribute('value'))
+        self.assertIn("** Test de Hola **", answerField.get_attribute('value'))
         
     def test_Divide_negative_integers(self):
         driver = self.driver
@@ -366,7 +367,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("-999999999")
         number2.send_keys("-999999999")
         selectOperation.select_by_visible_text("Divide")
@@ -392,7 +393,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("9999999999")
         number2.send_keys("9999999999")
         selectOperation.select_by_visible_text("Divide")
@@ -418,7 +419,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("-9999999.9")
         number2.send_keys("-9999999.9")
         selectOperation.select_by_visible_text("Divide")
@@ -444,7 +445,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         answerField = driver.find_element(By.ID, "numberAnswerField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("99999999.9")
         number2.send_keys("99999999.9")
         selectOperation.select_by_visible_text("Divide")
@@ -470,7 +471,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("##%$")
         number2.send_keys("15")
         selectOperation.select_by_visible_text("Divide")
@@ -496,7 +497,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("15")
         number2.send_keys("1fdes5")
         selectOperation.select_by_visible_text("Divide")
@@ -521,7 +522,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("25")
         number2.send_keys("0")
         selectOperation.select_by_visible_text("Divide")
@@ -544,7 +545,7 @@ class FindElements(unittest.TestCase):
         calculateBtn = driver.find_element(By.ID, "calculateButton")
         errorField = driver.find_element(By.ID, "errorMsgField")
 
-        selectBuild.select_by_visible_text("2")
+        selectBuild.select_by_visible_text(self.build)
         number1.send_keys("25")
         number2.send_keys("0")
         selectOperation.select_by_visible_text("Divide")
